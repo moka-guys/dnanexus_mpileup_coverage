@@ -1,6 +1,3 @@
-[submodule "mpileup_coverage"]
-	path = mpileup_coverage
-	url = https://github.com/moka-guys/mpileup_coverage
 [submodule "resources/home/dnanexus/mpileup_coverage"]
 	path = resources/home/dnanexus/mpileup_coverage
 	url = https://github.com/moka-guys/mpileup_coverage
