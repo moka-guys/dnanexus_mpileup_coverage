@@ -1,0 +1,62 @@
+{
+  "name": "mpileup_coverage_v1.0",
+  "title": "mpileup_coverage_v1.0",
+  "summary": "v1.0 - calculate coverage from mpileup file",
+  "tags": [
+    "Variants",
+    "Cancer"
+  ],
+  "properties": {
+    "github release": "v1.0"
+  },
+  "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "mpileup_file",
+      "label": "mpileup_file",
+      "help": "The mpileup file",
+      "class": "file",
+      "patterns": ["*.mpileup"],
+      "optional": false
+    },
+    {
+      "name": "bed_file",
+      "label": "Bed file (sambamba)",
+      "help": "bed file used for variant filtering",
+      "class": "file",
+      "patterns": ["*.bed"],
+      "optional": false
+    },
+    {
+     "name": "min_coverage",
+     "label": "min_coverage",
+     "help": "Minimum coverage required for an amplicon",
+     "class": "string",
+     "optional": false,
+     "default": "600",      
+     "group": "varscan"
+    }
+    ],
+  "outputSpec": [
+    {
+      "name": "coverage_report",
+      "label": "coverage_report",
+      "help": "list of amplicons not covered 100% at required depth.",
+      "class": "file",
+      "optional": false
+    }
+  ],
+  "runSpec": {
+    "execDepends": [
+        ],
+    "systemRequirements": {
+      "main": {
+        "instanceType": "mem1_ssd1_x2"
+      }
+    },
+    "distribution" : "Ubuntu",
+    "release" : "16.04",
+    "file": "src/code.sh",
+    "interpreter": "bash"
+  }
+}
