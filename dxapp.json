@@ -1,7 +1,7 @@
 {
   "name": "mpileup_coverage_v1.0",
   "title": "mpileup_coverage_v1.0",
-  "summary": "v1.0 - (calculate coverage from mpileup file)",
+  "summary": "v1.0 - calculate coverage from mpileup file",
   "tags": [
     "Variants",
     "Cancer"
@@ -21,11 +21,11 @@
     },
     {
       "name": "bed_file",
-      "label": "Bed file",
+      "label": "Bed file (sambamba)",
       "help": "bed file used for variant filtering",
       "class": "file",
       "patterns": ["*.bed"],
-      "optional": true
+      "optional": false
     },
     {
      "name": "min_coverage",
@@ -39,17 +39,11 @@
     ],
   "outputSpec": [
     {
-      "name": "failing_amplicons",
-      "label": "failing_amplicons",
+      "name": "coverage_report",
+      "label": "coverage_report",
       "help": "list of amplicons not covered 100% at required depth.",
       "class": "file",
       "optional": false
-    },
-    {
-      "name": "mpileup_file",
-      "label": "mpileup file",
-      "help": "Output Samtools mpileup file used by varscan.",
-      "class": "file"
     }
   ],
   "runSpec": {
