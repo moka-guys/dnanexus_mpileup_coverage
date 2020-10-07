@@ -9,9 +9,11 @@ mkdir -p ~/out/coverage_report/coverage/varscan_coverage
 
 # Download inputs
 dx-download-all-inputs --parallel
-
-# Run Python script
-python mpileup_coverage/mpileup_coverage.py -b $bed_file_path -m $mpileup_file_path -c $min_coverage -o out/coverage_report/coverage/varscan_coverage/$mpileup_file_name.coverage_report.txt
+# loop through array of all mpileup files. 
+for (( i=0; i<${#mpileup_file_path[@]}; i++ )); 
+    # Run Python script
+    do python mpileup_coverage/mpileup_coverage.py -b $bed_file_path -m ${mpileup_file_path[$i]} -c $min_coverage -o out/coverage_report/coverage/varscan_coverage/${mpileup_file_name[$i]}.coverage_report.txt
+done
 
 # upload output
 dx-upload-all-outputs --parallel

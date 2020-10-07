@@ -15,7 +15,7 @@
       "name": "mpileup_file",
       "label": "mpileup_file",
       "help": "The mpileup file",
-      "class": "file",
+      "class": "array:file",
       "patterns": ["*.mpileup"],
       "optional": false
     },
@@ -42,7 +42,7 @@
       "name": "coverage_report",
       "label": "coverage_report",
       "help": "list of amplicons not covered 100% at required depth.",
-      "class": "file",
+      "class": "array:file",
       "optional": false
     }
   ],
